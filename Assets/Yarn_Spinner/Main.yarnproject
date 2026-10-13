@@ -1,0 +1,26 @@
+{
+  "projectFileVersion": 4,
+  "sourceFiles": [
+    "TestDialogue.yarn"
+  ],
+  "excludeFiles": [
+    "**/*~/*",
+    "./Samples/Yarn Spinner*/*"
+  ],
+  "localisation": {},
+  "baseLanguage": "zh",
+  "compilerOptions": {
+    "diagnosticsSeverity": {}
+  },
+  "editorOptions": {
+    "yarnScriptEditor": {
+      "previewFontSize": 12,
+      "projectGraphPositions": {
+        "TestDialogue.yarn": {
+          "x": 77,
+          "y": 155
+        }
+      }
+    }
+  }
+}

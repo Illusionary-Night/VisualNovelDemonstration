@@ -1,9 +1,83 @@
-﻿title: Start
+﻿
+
+
+title: Start
+position: 62,12
 ---
-Alice: 嗨！這是我們的第一個 Yarn Spinner 對話！
-Alice: 你準備好學習寫視覺小說了嗎？
--> 準備好了！
-    Alice: 太棒了，那我們開始吧！
--> 還沒，有點緊張...
-    Alice: 別擔心，這個系統非常簡單！
+<<declare $affection = 0>>
+<<declare $has_coffee = false>>
+<<jump scene_01_street>>
+===
+
+// 3. 第一幕：街道上
+title: scene_01_street
+position: 62,237
+---
+今天是個大晴天<br>。你走在前往社辦的路上。 #line:07f2565 
+路過便利商店時，你想著要不要買點什麼。 #line:0198033 
+
+-> 買一杯熱咖啡 (花費 50 元) #line:031798c 
+    <<set $has_coffee = true>>
+    你走進超商，買了一杯熱騰騰的拿鐵。 #line:005b664 
+    <<jump scene_02_clubroom>>
+-> 省錢，直接去社辦 #line:0cf0c66 
+    你摸了摸乾癟的錢包，決定快步前往社辦。 #line:08e4082 
+    <<jump scene_02_clubroom>>
+===
+
+// 4. 第二幕：社辦
+title: scene_02_clubroom
+position: 62,462
+---
+你推開社辦的門，看到美術總監「小亞」正趴在桌上，看起來很累的樣子。 #line:0f969df 
+小亞: 早安...我熬夜趕圖，現在好想睡覺... #line:09bcc17 
+
+-> 關心她 #line:08fc922 
+    <<set $affection += 10>>
+    你拍了拍她的肩膀：「辛苦了，專案進度還好嗎？」 #line:0df7cd2 
+    小亞: 有你這句話就好多了。 
+    <<jump check_ending>>
+// 條件選項：將 <<if>> 寫在選項右側
+-> 把熱咖啡遞給她 <<if $has_coffee == true>> #line:0676e7a 
+    <<set $affection += 50>>
+    你把剛買的熱拿鐵放在她桌上。 #line:0ccd522 
+    小亞: 天啊！你怎麼知道我需要這個！你最棒了！ #line:05cb276 
+    <<jump check_ending>>
+-> 催促進度 #line:03778e2 
+    <<set $affection -= 20>>
+    你皺起眉頭：「立繪什麼時候可以交？」 #line:0e43b82 
+    小亞瞪了你一眼，默默把頭轉過去不理你。 #line:026b005 
+    <<jump check_ending>>
+===
+
+// 5. 結局結算判定
+title: check_ending
+position: 62,687
+---
+<<if $affection >= 50>>
+    <<jump ending_good>>
+<<elseif $affection < 0>>
+    <<jump ending_bad>>
+<<else>>
+    <<jump ending_normal>>
+<<endif>>
+===
+
+// 6. 各種結局分支
+title: ending_good
+position: 271,926
+---
+【True End】小亞充滿幹勁，視覺小說順利完成，大受好評！ #line:09143cc 
+===
+
+title: ending_normal
+position: -13,927
+---
+【Normal End】遊戲勉強壓線做完了，但大家都覺得有點肝。 #line:09121f7 
+===
+
+title: ending_bad
+position: 572,912
+---
+【Bad End】團隊氣氛降至冰點，專案無限期延宕... #line:043b42a 
 ===
