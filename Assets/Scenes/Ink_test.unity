@@ -129,6 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 125383071}
   - component: {fileID: 125383070}
+  - component: {fileID: 125383073}
+  - component: {fileID: 125383072}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -148,7 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd77b3026ba990428b299d5de0c72a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InkDialogueManager
-  inkJSONAsset: {fileID: 4900000, guid: ed1a3ff3d341f884daff3b2af78e9a2d, type: 3}
+  eventManager: {fileID: 125383073}
+  inkJSONAsset: {fileID: 4900000, guid: 0caeec8fccc42d745a7b4f12b31e5eab, type: 3}
   dialogueText: {fileID: 791112080}
   buttonPrefab: {fileID: 7085679075224996215, guid: ce5232a380801494399abedfad288203, type: 3}
   buttonContainer: {fileID: 1713601559}
@@ -167,6 +170,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &125383072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125383069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088198c09073ca34db884514bc81694f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEvent
+--- !u!114 &125383073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125383069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3558ac76e24e04da1983c9b92c2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventManager
 --- !u!1 &791112078
 GameObject:
   m_ObjectHideFlags: 0
